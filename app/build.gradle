@@ -27,6 +27,6 @@ dependencies {
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknife"
     apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknife"
     compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageview"
-//    compile project(':FlycoSystemBar_Lib')
-    compile "com.flyco.systembar:FlycoSystemBar_Lib:1.0.0@aar"
+    compile project(':FlycoSystemBar_Lib')
+    //compile "com.flyco.systembar:FlycoSystemBar_Lib:1.0.0@aar"
 }
