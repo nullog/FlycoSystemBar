@@ -21,13 +21,16 @@ import com.flyco.systembardemo.ui.common.adapter.SingleTypeAdapter;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 public class HomeFragment extends Fragment {
-    @Bind(R.id.recycler_view) RecyclerView mRecyclerView;
-    @Bind(R.id.navigation) LinearLayout mNavigation;
+    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+    @BindView(R.id.navigation) LinearLayout mNavigation;
+    private Unbinder unbinder;
+
     private Context mContext;
 
     public HomeFragment() {
@@ -49,7 +52,7 @@ public class HomeFragment extends Fragment {
         mContext = getActivity();
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -62,7 +65,7 @@ public class HomeFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 
     public void showUi(List<DemoPager> demoPagers) {

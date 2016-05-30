@@ -20,16 +20,16 @@ import com.flyco.systembardemo.ui.common.SimpleFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class StatusBarImmersive3Activity extends AppCompatActivity {
-    @Bind(R.id.tabs) TabLayout mTabs;
-    @Bind(R.id.viewpager) ViewPager mViewpager;
-    @Bind(R.id.appbar) AppBarLayout mAppbar;
-    @Bind(R.id.collapsing_toolbar) CollapsingToolbarLayout mCollapsingToolbar;
-    @Bind(R.id.toolbar) Toolbar mToolbar;
-    @Bind(R.id.nickname) TextView mNickname;
+    @BindView(R.id.tabs) TabLayout mTabs;
+    @BindView(R.id.viewpager) ViewPager mViewpager;
+    @BindView(R.id.appbar) AppBarLayout mAppbar;
+    @BindView(R.id.collapsing_toolbar) CollapsingToolbarLayout mCollapsingToolbar;
+    @BindView(R.id.toolbar) Toolbar mToolbar;
+    @BindView(R.id.nickname) TextView mNickname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

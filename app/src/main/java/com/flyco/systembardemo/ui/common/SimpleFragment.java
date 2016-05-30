@@ -19,13 +19,16 @@ import com.flyco.systembardemo.ui.common.adapter.SingleTypeAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 
 public class SimpleFragment extends Fragment {
     private static final String ARG_TAB_NAME = "tab_name";
-    @Bind(R.id.recycler_view) RecyclerView mRecyclerView;
+    @BindView(R.id.recycler_view) RecyclerView mRecyclerView;
+    private Unbinder unbinder;
+
     private Context mContext;
     private String mTabName;
     private ArrayList<String> mTabNames = new ArrayList<>();
@@ -56,7 +59,7 @@ public class SimpleFragment extends Fragment {
         mContext = getActivity();
 
         View view = inflater.inflate(R.layout.fragment_simple, container, false);
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
@@ -101,6 +104,6 @@ public class SimpleFragment extends Fragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
+        unbinder.unbind();
     }
 }
